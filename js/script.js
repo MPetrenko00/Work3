@@ -11,10 +11,21 @@ console.log(calcSumm(2,3))*/
 
 //Планирование setTimeout and setInterval
 
-function showNumber(num){
+/*function showNumber(num){
     console.log(num);
     if(num < 5){
         setTimeout(showNumber, 1000, ++num);
+    }
+}
+setTimeout(showNumber, 1000, 1);*/
+
+
+
+function showNumber(num){
+    console.log(num);
+    let timeId = setTimeout(showNumber, 1000, ++num);
+    if(num === 10){
+        clearTimeout(timeId);
     }
 }
 setTimeout(showNumber, 1000, 1);
